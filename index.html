@@ -1,5 +1,6 @@
 <html>
     <head>
+        <script src="jquery-3.7.1.js"></script>
         <script src="todo.js">
         </script>
     </head>
@@ -20,7 +21,7 @@
         <button type="submit" onclick="addTodo()">Add To-do</button>
         <ol id="todoList">
             <!-- <li>
-                <input type="checkbox"/>
+                <input type="checkbox" onclick="onTodoComplete(this)"/>
                 <label>Todo 1</label>
                 <button>Edit</button>
                 <button>Delete</button>
