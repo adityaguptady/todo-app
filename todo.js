@@ -60,7 +60,7 @@ function updateFrontend()
     {
         // todoList.innerHTML += "<li>"+todoListArray[index]+"</li>"
         if(todoListArray[index].completed)
-            todoList.innerHTML += "<li id="+todoListArray[index].id+"><input type='checkbox' onclick='onTodoComplete(this, "+todoListArray[index].id+")' checked/><input value="+todoListArray[index].todo+"></input><button onclick='onEditTodo("+todoListArray[index].id+")'>Edit</button><button onclick='onDeleteTodo("+todoListArray[index].id+")'>Delete</button></li>"
+            todoList.innerHTML += "<li id="+todoListArray[index].id+"><input type='checkbox' onclick='onTodoComplete(this, "+todoListArray[index].id+")' checked/><label ><s>"+todoListArray[index].todo+"<s></label><button onclick='onEditTodo("+todoListArray[index].id+")'>Edit</button><button onclick='onDeleteTodo("+todoListArray[index].id+")'>Delete</button></li>"
         else if(editingTodoFlag == todoListArray[index].id)
         {
             todoList.innerHTML += "<li id="+todoListArray[index].id+"><input type='checkbox' onclick='onTodoComplete(this, "+todoListArray[index].id+")'/><input id='editingTodo' value="+todoListArray[index].todo+"></input><button onclick='saveTodo("+todoListArray[index].id+")'>Save To-do</button><button onclick='onDeleteTodo("+todoListArray[index].id+")'>Delete</button></li>"
@@ -111,8 +111,8 @@ function onDeleteTodo(todoID)
 
 function onTodoComplete(checkbox, todoID)
 {
-    // console.log("Checked change!", checkbox.checked)
-    // console.log("Todo ID:", todoID)
+    console.log("Checked change!", checkbox.checked)
+    console.log("Todo ID:", todoID)
     //find the correct object from the array based on id
     //update the object to change the checked property
     //update the array
@@ -121,12 +121,6 @@ function onTodoComplete(checkbox, todoID)
     {
         if(todoObj.id == todoID)
         {
-            //console.log("Found!!!", todoObj.todo)
-            // if(checkbox.checked)
-            //     todoObj.checked = true
-            // else
-            //     todoObj.checked = false
-
             todoObj.completed = checkbox.checked
         }
         return todoObj
