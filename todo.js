@@ -58,10 +58,22 @@ function updateFrontend()
     {
         // todoList.innerHTML += "<li>"+todoListArray[index]+"</li>"
         if(todoListArray[index].completed)
-            todoList.innerHTML += "<li id="+todoListArray[index].id+"><input type='checkbox'  onclick='onTodoComplete(this, "+todoListArray[index].id+")' checked/><label>"+todoListArray[index].todo+"</label><button>Edit</button><button>Delete</button></li>"
+            todoList.innerHTML += "<li id="+todoListArray[index].id+"><input type='checkbox'  onclick='onTodoComplete(this, "+todoListArray[index].id+")' checked/><label>"+todoListArray[index].todo+"</label><button>Edit</button><button onclick='onDeleteTodo("+todoListArray[index].id+")'>Delete</button></li>"
         else
-            todoList.innerHTML += "<li id="+todoListArray[index].id+"><input type='checkbox'  onclick='onTodoComplete(this, "+todoListArray[index].id+")'/><label>"+todoListArray[index].todo+"</label><button>Edit</button><button>Delete</button></li>"
+            todoList.innerHTML += "<li id="+todoListArray[index].id+"><input type='checkbox'  onclick='onTodoComplete(this, "+todoListArray[index].id+")'/><label>"+todoListArray[index].todo+"</label><button>Edit</button><button onclick='onDeleteTodo("+todoListArray[index].id+")'>Delete</button></li>"
     }
+}
+
+function onDeleteTodo(todoID)
+{
+    console.log("ID to be deleted: ", todoID)
+    //find out the object in the array
+    //delete the complete object from teh array
+    todoListArray = todoListArray.filter((todoObj)=>
+    {
+        return !(todoID == todoObj.id)
+    })
+    updateFrontend()
 }
 
 function onTodoComplete(checkbox, todoID)
