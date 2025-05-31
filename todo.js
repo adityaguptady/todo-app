@@ -5,26 +5,26 @@ $(document).ready(function()
 // console.log("Hello")
 var count = 0
 var todoListArray = [
-    {
-        id: ++count,
-        todo: "Todo 1",
-        completed: false
-    }, 
-    {
-        id: ++count,
-        todo: "Todo 2",
-        completed: false
-    },
-    {
-        id: ++count,
-        todo: "Todo 3",
-        completed: false
-    },
-    {
-        id: ++count,
-        todo: "Todo 4",
-        completed: false
-    }
+    // {
+    //     id: ++count,
+    //     todo: "Todo 1",
+    //     completed: false
+    // }, 
+    // {
+    //     id: ++count,
+    //     todo: "Todo 2",
+    //     completed: false
+    // },
+    // {
+    //     id: ++count,
+    //     todo: "Todo 3",
+    //     completed: false
+    // },
+    // {
+    //     id: ++count,
+    //     todo: "Todo 4",
+    //     completed: false
+    // }
 ]
 
 function addTodo()
